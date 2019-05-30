@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sarahYue">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高使用flex布局123&amp;lt;el-row type=&apos;flex&apos;&amp;gt;  &amp;lt;el-col&amp;gt;&amp;lt;/el-col&amp;gt;&amp;lt;/el-row&amp;gt; 配合递归组件即可实现无限嵌套布局 ##递归组件 父组件12345678910111213141516171">
+<meta property="og:type" content="article">
+<meta property="og:title" content="el-row同行自动等高">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/el-row同行自动等高 + 递归组件/index.html">
 <meta property="og:site_name" content="sarahYue">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高使用flex布局123&amp;lt;el-row type=&apos;flex&apos;&amp;gt;  &amp;lt;el-col&amp;gt;&amp;lt;/el-col&amp;gt;&amp;lt;/el-row&amp;gt; 配合递归组件即可实现无限嵌套布局 ##递归组件 父组件12345678910111213141516171">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-30T06:45:07.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sarahYue">
-<meta name="twitter:description" content="个人博客">
+<meta name="twitter:title" content="el-row同行自动等高">
+<meta name="twitter:description" content="项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高使用flex布局123&amp;lt;el-row type=&apos;flex&apos;&amp;gt;  &amp;lt;el-col&amp;gt;&amp;lt;/el-col&amp;gt;&amp;lt;/el-row&amp;gt; 配合递归组件即可实现无限嵌套布局 ##递归组件 父组件12345678910111213141516171">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/30/el-row同行自动等高 + 递归组件/">
 
 
 
 
 
-  <title>sarahYue</title>
+  <title>el-row同行自动等高 | sarahYue</title>
   
 
 
@@ -143,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/sarahYue" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,9 +227,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -259,9 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/30/el-row同行自动等高 + 递归组件/" itemprop="url">el-row同行自动等高</a></h1>
+          <h1 class="post-title" itemprop="name headline">el-row同行自动等高</h1>
         
 
         <div class="post-meta">
@@ -311,22 +309,24 @@
       
 
       
-        
-          
-            <h2 id="项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高"><a href="#项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高" class="headerlink" title="项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高"></a>项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高</h2><p>使用flex布局<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row <span class="built_in">type</span>=<span class="string">'flex'</span>&gt;</span><br><span class="line">  &lt;el-col&gt;&lt;/el-col&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高"><a href="#项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高" class="headerlink" title="项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高"></a>项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高</h2><p>使用flex布局<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row <span class="built_in">type</span>=<span class="string">'flex'</span>&gt;</span><br><span class="line">  &lt;el-col&gt;&lt;/el-col&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure></p>
 <p>配合递归组件即可实现无限嵌套布局</p>
 <p>##递归组件</p>
 <h3 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;innerTree :arr=<span class="string">'arr'</span>&gt;&lt;/innerTree&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import innerTree from <span class="string">'@/components/innerTree'</span></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      arr: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    innerTree</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">created</span></span> () &#123;</span><br><span class="line">    // 需要处理arr数据格式，符合树类型</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;el-row v-for=<span class="string">'row in arr'</span> :key=<span class="string">'row'</span>&gt;</span><br><span class="line">      &lt;el-col v-for=<span class="string">'item in row'</span> :key=<span class="string">'item'</span>&gt;</span><br><span class="line">        &lt;div v-if=<span class="string">'!item.children'</span>&gt;....&lt;/div&gt;</span><br><span class="line">        &lt;div v-else&gt;</span><br><span class="line">          &lt;innerTree :arr=<span class="string">'item.children'</span>&gt;&lt;/innerTree&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/el-col&gt;</span><br><span class="line">    &lt;/el-row&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="built_in">export</span> default &#123;</span><br><span class="line">    name: <span class="string">'innerTree'</span>,</span><br><span class="line">    props: &#123;</span><br><span class="line">      arr: Array</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
     
     
     <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
       
     </div>
     
@@ -339,136 +339,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/30/一道js测试题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sarahYue">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/30/一道js测试题/" itemprop="url">一道js测试题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-30T14:17:50+08:00">
-                2019-05-30
-              </time>
+              <a href="/2019/05/30/一道js测试题/" rel="next" title="一道js测试题">
+                <i class="fa fa-chevron-left"></i> 一道js测试题
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="验证字符串中是否有重复出现的字符，不区分大小写"><a href="#验证字符串中是否有重复出现的字符，不区分大小写" class="headerlink" title="验证字符串中是否有重复出现的字符，不区分大小写"></a>验证字符串中是否有重复出现的字符，不区分大小写</h2><p>emmm 我是用for循环来写的，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isIsogram(str)&#123;</span><br><span class="line">  str = str.toLowerCase()</span><br><span class="line">  <span class="keyword">for</span>(<span class="built_in">let</span> i = 0; i &lt; str.length; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> j = i + 1; j &lt; str.length; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(str[i] === str[j])&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>本来也有想用正则是否能处理，但完全写不出来<br>最后提交之后看到其中一个处理方式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isIsogram(str)&#123; </span><br><span class="line">  <span class="built_in">return</span> !/(\w).*\1/i.test(str)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>…..学到了</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -478,140 +370,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sarahYue">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/28/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-28T14:00:15+08:00">
-                2019-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -619,6 +382,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDQ1OC8yMDk5MA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -639,8 +411,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -682,6 +463,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高"><span class="nav-number">1.</span> <span class="nav-text">项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父组件"><span class="nav-number">1.1.</span> <span class="nav-text">父组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组件"><span class="nav-number">1.2.</span> <span class="nav-text">子组件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -822,6 +619,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -850,6 +651,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
