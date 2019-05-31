@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/生成指定数量的重复字符串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/生成指定长度的重复字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -261,7 +261,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/31/生成指定数量的重复字符串/" itemprop="url">生成指定数量的重复字符串</a></h1>
+                <a class="post-title-link" href="/2019/05/31/生成指定长度的重复字符串/" itemprop="url">生成指定长度的重复字符串</a></h1>
         
 
         <div class="post-meta">
@@ -314,13 +314,15 @@
         
           
             <p>先看问题要求<br>写一个function <code>accum</code>，实现如下效果<br>accum(“abcd”) -&gt; “A-Bb-Ccc-Dddd”<br>accum(“RqaEzty”) -&gt; “R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy”<br>accum(“cwAt”) -&gt; “C-Ww-Aaa-Tttt”</p>
-<p>首先split分割字符串是跑不了的，其次分析也得知是toUpperCase()和toLowerCase()分别获取大小写，最终使用join(‘-‘)拼接<br>现在要解决的问题是怎么获取 <code>指定次数</code> 的小写字符 </p>
+<p>首先split分割字符串是跑不了的，其次分析也得知是toUpperCase()和toLowerCase()分别获取大小写，最终使用join(‘-‘)拼接<br>现在要解决的问题是怎么获取 <code>指定长度</code> 的小写字符 </p>
 <h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h3><p>repeat()方法返回一个新字符串，表示将原字符串重复n次</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;i&apos;.repeat(3) // &apos;iiii&apos;</span><br><span class="line">&apos;hello&apos;.repeat(2) // &quot;hellohello&quot;</span><br><span class="line"></span><br><span class="line">// 参数如果是小数会取整</span><br><span class="line">&apos;na&apos;.repeat(2.9) // &quot;nana&quot;</span><br></pre></td></tr></table></figure>
 <p>问题解决<br>即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function accum(s) &#123;</span><br><span class="line">  return s.split(&apos;&apos;).map((c, i) =&gt; (c.toUpperCase() + c.toLowerCase().repeat(i))).join(&apos;-&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>okk</p>
 <h2 id="补充！"><a href="#补充！" class="headerlink" title="补充！"></a>补充！</h2><p>一位姑娘提到她会使用<code>[...s]</code> 而不是 <code>split</code><br><code>...</code> 是ES6新增的扩展运算符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;asdfhj&apos;</span><br><span class="line">[...s] // [&quot;a&quot;, &quot;s&quot;, &quot;d&quot;, &quot;f&quot;, &quot;h&quot;, &quot;j&quot;]</span><br></pre></td></tr></table></figure></p>
 <p>ES6我真的不记得有这个- -  太酷了</p>
+<h2 id="补充again"><a href="#补充again" class="headerlink" title="补充again"></a>补充again</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array(5).join(&apos;a&apos;.toLowerCase()) // &apos;aaaa&apos;</span><br></pre></td></tr></table></figure>
+<p>也可以实现创建指定长度字符串</p>
 
           
         
