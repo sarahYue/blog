@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="验证字符串中是否有重复出现的字符，不区分大小写emmm 我是用for循环来写的，1234567891011function isIsogram(str)&amp;#123;  str = str.toLowerCase()  for(let i = 0; i &amp;lt; str.length; i++)&amp;#123;    for(let j = i + 1; j &amp;lt; str.length; j++)&amp;">
+<meta name="description" content="先看问题要求写一个function accum，实现如下效果accum(“abcd”) -&amp;gt; “A-Bb-Ccc-Dddd”accum(“RqaEzty”) -&amp;gt; “R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy”accum(“cwAt”) -&amp;gt; “C-Ww-Aaa-Tttt” 首先split分割字符串是跑不了的，其次分析也得知是toUpperCase()和">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一道js测试题">
-<meta property="og:url" content="http://yoursite.com/2019/05/30/一道js测试题/index.html">
+<meta property="og:title" content="生成指定数量的重复字符串">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/生成指定数量的重复字符串/index.html">
 <meta property="og:site_name" content="sarahYue">
-<meta property="og:description" content="验证字符串中是否有重复出现的字符，不区分大小写emmm 我是用for循环来写的，1234567891011function isIsogram(str)&amp;#123;  str = str.toLowerCase()  for(let i = 0; i &amp;lt; str.length; i++)&amp;#123;    for(let j = i + 1; j &amp;lt; str.length; j++)&amp;">
+<meta property="og:description" content="先看问题要求写一个function accum，实现如下效果accum(“abcd”) -&amp;gt; “A-Bb-Ccc-Dddd”accum(“RqaEzty”) -&amp;gt; “R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy”accum(“cwAt”) -&amp;gt; “C-Ww-Aaa-Tttt” 首先split分割字符串是跑不了的，其次分析也得知是toUpperCase()和">
 <meta property="og:locale" content="zh-Han">
-<meta property="og:updated_time" content="2019-05-30T06:52:33.715Z">
+<meta property="og:updated_time" content="2019-05-31T08:37:23.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一道js测试题">
-<meta name="twitter:description" content="验证字符串中是否有重复出现的字符，不区分大小写emmm 我是用for循环来写的，1234567891011function isIsogram(str)&amp;#123;  str = str.toLowerCase()  for(let i = 0; i &amp;lt; str.length; i++)&amp;#123;    for(let j = i + 1; j &amp;lt; str.length; j++)&amp;">
+<meta name="twitter:title" content="生成指定数量的重复字符串">
+<meta name="twitter:description" content="先看问题要求写一个function accum，实现如下效果accum(“abcd”) -&amp;gt; “A-Bb-Ccc-Dddd”accum(“RqaEzty”) -&amp;gt; “R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy”accum(“cwAt”) -&amp;gt; “C-Ww-Aaa-Tttt” 首先split分割字符串是跑不了的，其次分析也得知是toUpperCase()和">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/30/一道js测试题/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/31/生成指定数量的重复字符串/">
 
 
 
 
 
-  <title>一道js测试题 | sarahYue</title>
+  <title>生成指定数量的重复字符串 | sarahYue</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/30/一道js测试题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/生成指定数量的重复字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一道js测试题</h1>
+          <h1 class="post-title" itemprop="name headline">生成指定数量的重复字符串</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-30T14:17:50+08:00">
-                2019-05-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-31T16:26:58+08:00">
+                2019-05-31
               </time>
             
 
@@ -309,9 +309,12 @@
       
 
       
-        <h2 id="验证字符串中是否有重复出现的字符，不区分大小写"><a href="#验证字符串中是否有重复出现的字符，不区分大小写" class="headerlink" title="验证字符串中是否有重复出现的字符，不区分大小写"></a>验证字符串中是否有重复出现的字符，不区分大小写</h2><p>emmm 我是用for循环来写的，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isIsogram(str)&#123;</span><br><span class="line">  str = str.toLowerCase()</span><br><span class="line">  <span class="keyword">for</span>(<span class="built_in">let</span> i = 0; i &lt; str.length; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> j = i + 1; j &lt; str.length; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(str[i] === str[j])&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>本来也有想用正则是否能处理，但完全写不出来<br>最后提交之后看到其中一个处理方式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isIsogram(str)&#123; </span><br><span class="line">  <span class="built_in">return</span> !/(\w).*\1/i.test(str)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>但是这样的话时间复杂度为O(n^2)<br>之后寻找一下有没有代码较简且时间复杂度较优的解决方案</p>
+        <p>先看问题要求<br>写一个function <code>accum</code>，实现如下效果<br>accum(“abcd”) -&gt; “A-Bb-Ccc-Dddd”<br>accum(“RqaEzty”) -&gt; “R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy”<br>accum(“cwAt”) -&gt; “C-Ww-Aaa-Tttt”</p>
+<p>首先split分割字符串是跑不了的，其次分析也得知是toUpperCase()和toLowerCase()分别获取大小写，最终使用join(‘-‘)拼接<br>现在要解决的问题是怎么获取 <code>指定次数</code> 的小写字符 </p>
+<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h3><p>repeat()方法返回一个新字符串，表示将原字符串重复n次</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;i&apos;.repeat(3) // &apos;iiii&apos;</span><br><span class="line">&apos;hello&apos;.repeat(2) // &quot;hellohello&quot;</span><br><span class="line"></span><br><span class="line">// 参数如果是小数会取整</span><br><span class="line">&apos;na&apos;.repeat(2.9) // &quot;nana&quot;</span><br></pre></td></tr></table></figure>
+<p>问题解决<br>即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function accum(s) &#123;</span><br><span class="line">  return s.split(&apos;&apos;).map((c, i) =&gt; (c.toUpperCase() + c.toLowerCase().repeat(i))).join(&apos;-&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>okk</p>
 
       
     </div>
@@ -344,8 +347,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/28/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/05/30/el-row同行自动等高 + 递归组件/" rel="next" title="el-row同行自动等高 + 递归组件">
+                <i class="fa fa-chevron-left"></i> el-row同行自动等高 + 递归组件
               </a>
             
           </div>
@@ -353,10 +356,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/30/el-row同行自动等高 + 递归组件/" rel="prev" title="el-row同行自动等高 + 递归组件">
-                el-row同行自动等高 + 递归组件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -475,7 +474,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#验证字符串中是否有重复出现的字符，不区分大小写"><span class="nav-number">1.</span> <span class="nav-text">验证字符串中是否有重复出现的字符，不区分大小写</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#repeat"><span class="nav-number">1.</span> <span class="nav-text">repeat()</span></a></li></ol></div>
             
 
           </div>
