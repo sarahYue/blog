@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="sarahYue">
 <meta property="og:description" content="先看问题要求写一个function accum，实现如下效果accum(“abcd”) -&amp;gt; “A-Bb-Ccc-Dddd”accum(“RqaEzty”) -&amp;gt; “R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy”accum(“cwAt”) -&amp;gt; “C-Ww-Aaa-Tttt” 首先split分割字符串是跑不了的，其次分析也得知是toUpperCase()和">
 <meta property="og:locale" content="zh-Han">
-<meta property="og:updated_time" content="2019-05-31T08:57:40.659Z">
+<meta property="og:updated_time" content="2019-05-31T09:00:14.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生成指定长度的重复字符串">
 <meta name="twitter:description" content="先看问题要求写一个function accum，实现如下效果accum(“abcd”) -&amp;gt; “A-Bb-Ccc-Dddd”accum(“RqaEzty”) -&amp;gt; “R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy”accum(“cwAt”) -&amp;gt; “C-Ww-Aaa-Tttt” 首先split分割字符串是跑不了的，其次分析也得知是toUpperCase()和">
@@ -316,6 +316,7 @@
 <p>问题解决<br>即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function accum(s) &#123;</span><br><span class="line">  return s.split(&apos;&apos;).map((c, i) =&gt; (c.toUpperCase() + c.toLowerCase().repeat(i))).join(&apos;-&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>okk</p>
 <h2 id="补充！"><a href="#补充！" class="headerlink" title="补充！"></a>补充！</h2><p>一位姑娘提到她会使用<code>[...s]</code> 而不是 <code>split</code><br><code>...</code> 是ES6新增的扩展运算符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;asdfhj&apos;</span><br><span class="line">[...s] // [&quot;a&quot;, &quot;s&quot;, &quot;d&quot;, &quot;f&quot;, &quot;h&quot;, &quot;j&quot;]</span><br></pre></td></tr></table></figure></p>
+<p>答案具体代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function accum (s) &#123;</span><br><span class="line">  return [...s].map((element, index) =&gt; &#123;</span><br><span class="line">    return element.toUpperCase() + element.toLowerCase().repeat(index)</span><br><span class="line">  &#125;).join(&apos;-&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>ES6我真的不记得有这个- -  太酷了</p>
 <h2 id="补充again"><a href="#补充again" class="headerlink" title="补充again"></a>补充again</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array(5).join(&apos;a&apos;.toLowerCase()) // &apos;aaaa&apos;</span><br></pre></td></tr></table></figure>
 <p>也可以实现创建指定长度字符串</p>
