@@ -242,6 +242,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/map-splice无法全部删除/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sarahYue">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/04/map-splice无法全部删除/" itemprop="url">map+splice无法全部删除</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-04T15:20:41+08:00">
+                2019-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr = [&apos;&apos;,&apos;&apos;,&apos;&apos;,&apos;&apos;]</span><br><span class="line">arr.map((i, index) =&gt; &#123;</span><br><span class="line">  arr.splice(index,1)</span><br><span class="line">&#125;)</span><br><span class="line">arr // [&quot;&quot;, &quot;&quot;]</span><br></pre></td></tr></table></figure>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>map根据索引循环数组<br>splice()会改变原数组，即后面元素会向前补充<br>例如：</p>
+<blockquote>
+<p>map循环到索引2时，使用splice删除，原索引3变为索引2，下一步map会直接执行索引3（原索引4），导致跳过一个元素（即原索引3）</p>
+</blockquote>
+<h3 id="处理方式"><a href="#处理方式" class="headerlink" title="处理方式"></a>处理方式</h3><p><code>倒序删除</code> 或 <code>filter</code></p>
+<h4 id="倒序删除"><a href="#倒序删除" class="headerlink" title="倒序删除"></a>倒序删除</h4><p><code>for(var i = arr.length-1;i&gt;=0;i--)</code></p>
+<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.filter(i =&gt; i!=&apos;&apos;)</span><br></pre></td></tr></table></figure>
+<h4 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/** 题目：</span><br><span class="line">  * 将字符串中的&apos;WUB&apos;变为空格</span><br><span class="line">  * 如果有多个连续&apos;WUB&apos;，只保留一个空格</span><br><span class="line">  * 两端去空</span><br><span class="line">*/</span><br><span class="line">&quot;AWUBBWUBC&quot; =&gt; &quot;A B C&quot;,&quot;WUB should be replaced by 1 space&quot;);</span><br><span class="line">&quot;AWUBWUBWUBBWUBWUBWUBC&quot; =&gt; &quot;A B C&quot;,&quot;multiples WUB should be replaced by only 1 space&quot;);</span><br><span class="line">&quot;WUBAWUBBWUBCWUB&quot; =&gt; &quot;A B C&quot;,&quot;heading or trailing spaces should be removed&quot;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function songDecoder(song)&#123;</span><br><span class="line">  return song.split(&apos;WUB&apos;).filter(i =&gt; i!=&apos;&apos;).join(&apos; &apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/字符串搜索-过滤/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1167,7 +1297,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

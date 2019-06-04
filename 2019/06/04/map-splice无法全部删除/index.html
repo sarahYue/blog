@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="match()方法定义match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配 检索实例12var str=&amp;quot;1 plus 2 equal 3&amp;quot;console.log(str.match(/\d+/g)) // 1,2,3 过滤12&amp;apos;The isndl&amp;apos;.match(/[a-zA-Z]/g)// [&amp;quot;T&amp;quot;, &amp;quo">
+<meta name="description" content="案例12345let arr = [&amp;apos;&amp;apos;,&amp;apos;&amp;apos;,&amp;apos;&amp;apos;,&amp;apos;&amp;apos;]arr.map((i, index) =&amp;gt; &amp;#123;  arr.splice(index,1)&amp;#125;)arr // [&amp;quot;&amp;quot;, &amp;quot;&amp;quot;] 原理map根据索引循环数组splice()会改变原数组，即后面元素会向">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字符串搜索&#x2F;过滤">
-<meta property="og:url" content="http://yoursite.com/2019/06/04/字符串搜索-过滤/index.html">
+<meta property="og:title" content="map+splice无法全部删除">
+<meta property="og:url" content="http://yoursite.com/2019/06/04/map-splice无法全部删除/index.html">
 <meta property="og:site_name" content="sarahYue">
-<meta property="og:description" content="match()方法定义match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配 检索实例12var str=&amp;quot;1 plus 2 equal 3&amp;quot;console.log(str.match(/\d+/g)) // 1,2,3 过滤12&amp;apos;The isndl&amp;apos;.match(/[a-zA-Z]/g)// [&amp;quot;T&amp;quot;, &amp;quo">
+<meta property="og:description" content="案例12345let arr = [&amp;apos;&amp;apos;,&amp;apos;&amp;apos;,&amp;apos;&amp;apos;,&amp;apos;&amp;apos;]arr.map((i, index) =&amp;gt; &amp;#123;  arr.splice(index,1)&amp;#125;)arr // [&amp;quot;&amp;quot;, &amp;quot;&amp;quot;] 原理map根据索引循环数组splice()会改变原数组，即后面元素会向">
 <meta property="og:locale" content="zh-Han">
-<meta property="og:updated_time" content="2019-06-04T06:00:35.916Z">
+<meta property="og:updated_time" content="2019-06-04T07:39:02.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字符串搜索&#x2F;过滤">
-<meta name="twitter:description" content="match()方法定义match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配 检索实例12var str=&amp;quot;1 plus 2 equal 3&amp;quot;console.log(str.match(/\d+/g)) // 1,2,3 过滤12&amp;apos;The isndl&amp;apos;.match(/[a-zA-Z]/g)// [&amp;quot;T&amp;quot;, &amp;quo">
+<meta name="twitter:title" content="map+splice无法全部删除">
+<meta name="twitter:description" content="案例12345let arr = [&amp;apos;&amp;apos;,&amp;apos;&amp;apos;,&amp;apos;&amp;apos;,&amp;apos;&amp;apos;]arr.map((i, index) =&amp;gt; &amp;#123;  arr.splice(index,1)&amp;#125;)arr // [&amp;quot;&amp;quot;, &amp;quot;&amp;quot;] 原理map根据索引循环数组splice()会改变原数组，即后面元素会向">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/04/字符串搜索-过滤/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/04/map-splice无法全部删除/">
 
 
 
 
 
-  <title>字符串搜索/过滤 | sarahYue</title>
+  <title>map+splice无法全部删除 | sarahYue</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/字符串搜索-过滤/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/map-splice无法全部删除/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">字符串搜索/过滤</h1>
+          <h1 class="post-title" itemprop="name headline">map+splice无法全部删除</h1>
         
 
         <div class="post-meta">
@@ -271,7 +271,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-04T13:55:59+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-04T15:20:41+08:00">
                 2019-06-04
               </time>
             
@@ -309,11 +309,16 @@
       
 
       
-        <h2 id="match-方法"><a href="#match-方法" class="headerlink" title="match()方法"></a>match()方法</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配</p>
-<h3 id="检索实例"><a href="#检索实例" class="headerlink" title="检索实例"></a>检索实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;1 plus 2 equal 3&quot;</span><br><span class="line">console.log(str.match(/\d+/g)) // 1,2,3</span><br></pre></td></tr></table></figure>
-<h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;The isndl&apos;.match(/[a-zA-Z]/g)</span><br><span class="line">// [&quot;T&quot;, &quot;h&quot;, &quot;e&quot;, &quot;i&quot;, &quot;s&quot;, &quot;n&quot;, &quot;d&quot;, &quot;l&quot;]</span><br></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>可以使用match实现 <code>去重</code> <code>删除特殊字符</code> 等功能</p>
-
+        <h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr = [&apos;&apos;,&apos;&apos;,&apos;&apos;,&apos;&apos;]</span><br><span class="line">arr.map((i, index) =&gt; &#123;</span><br><span class="line">  arr.splice(index,1)</span><br><span class="line">&#125;)</span><br><span class="line">arr // [&quot;&quot;, &quot;&quot;]</span><br></pre></td></tr></table></figure>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>map根据索引循环数组<br>splice()会改变原数组，即后面元素会向前补充<br>例如：</p>
+<blockquote>
+<p>map循环到索引2时，使用splice删除，原索引3变为索引2，下一步map会直接执行索引3（原索引4），导致跳过一个元素（即原索引3）</p>
+</blockquote>
+<h3 id="处理方式"><a href="#处理方式" class="headerlink" title="处理方式"></a>处理方式</h3><p><code>倒序删除</code> 或 <code>filter</code></p>
+<h4 id="倒序删除"><a href="#倒序删除" class="headerlink" title="倒序删除"></a>倒序删除</h4><p><code>for(var i = arr.length-1;i&gt;=0;i--)</code></p>
+<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.filter(i =&gt; i!=&apos;&apos;)</span><br></pre></td></tr></table></figure>
+<h4 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/** 题目：</span><br><span class="line">  * 将字符串中的&apos;WUB&apos;变为空格</span><br><span class="line">  * 如果有多个连续&apos;WUB&apos;，只保留一个空格</span><br><span class="line">  * 两端去空</span><br><span class="line">*/</span><br><span class="line">&quot;AWUBBWUBC&quot; =&gt; &quot;A B C&quot;,&quot;WUB should be replaced by 1 space&quot;);</span><br><span class="line">&quot;AWUBWUBWUBBWUBWUBWUBC&quot; =&gt; &quot;A B C&quot;,&quot;multiples WUB should be replaced by only 1 space&quot;);</span><br><span class="line">&quot;WUBAWUBBWUBCWUB&quot; =&gt; &quot;A B C&quot;,&quot;heading or trailing spaces should be removed&quot;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function songDecoder(song)&#123;</span><br><span class="line">  return song.split(&apos;WUB&apos;).filter(i =&gt; i!=&apos;&apos;).join(&apos; &apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -345,8 +350,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/04/数组-字符串多处替换/" rel="next" title="数组/字符串多处替换">
-                <i class="fa fa-chevron-left"></i> 数组/字符串多处替换
+              <a href="/2019/06/04/字符串搜索-过滤/" rel="next" title="字符串搜索/过滤">
+                <i class="fa fa-chevron-left"></i> 字符串搜索/过滤
               </a>
             
           </div>
@@ -354,10 +359,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/04/map-splice无法全部删除/" rel="prev" title="map+splice无法全部删除">
-                map+splice无法全部删除 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,7 +477,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#match-方法"><span class="nav-number">1.</span> <span class="nav-text">match()方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检索实例"><span class="nav-number">1.2.</span> <span class="nav-text">检索实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤"><span class="nav-number">1.3.</span> <span class="nav-text">过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例"><span class="nav-number">1.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理方式"><span class="nav-number">3.</span> <span class="nav-text">处理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#倒序删除"><span class="nav-number">3.1.</span> <span class="nav-text">倒序删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">3.2.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#案例-1"><span class="nav-number">3.3.</span> <span class="nav-text">案例</span></a></li></ol></li></ol></div>
             
 
           </div>
