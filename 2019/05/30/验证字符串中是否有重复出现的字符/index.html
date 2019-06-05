@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目验证字符串中是否有重复出现的字符，不区分大小写 解决方式emmm 我是用for循环来写的，1234567891011function isIsogram(str)&amp;#123;  str = str.toLowerCase()  for(let i = 0; i &amp;lt; str.length; i++)&amp;#123;    for(let j = i + 1; j &amp;lt; str.length">
+<meta name="description" content="题目验证字符串中是否有重复出现的字符，不区分大小写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="验证字符串中是否有重复出现的字符">
 <meta property="og:url" content="http://sarahyue.github.io/2019/05/30/验证字符串中是否有重复出现的字符/index.html">
 <meta property="og:site_name" content="sarahYue">
-<meta property="og:description" content="题目验证字符串中是否有重复出现的字符，不区分大小写 解决方式emmm 我是用for循环来写的，1234567891011function isIsogram(str)&amp;#123;  str = str.toLowerCase()  for(let i = 0; i &amp;lt; str.length; i++)&amp;#123;    for(let j = i + 1; j &amp;lt; str.length">
+<meta property="og:description" content="题目验证字符串中是否有重复出现的字符，不区分大小写">
 <meta property="og:locale" content="zh-Han">
-<meta property="og:updated_time" content="2019-06-05T05:40:52.141Z">
+<meta property="og:updated_time" content="2019-06-05T08:54:28.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="验证字符串中是否有重复出现的字符">
-<meta name="twitter:description" content="题目验证字符串中是否有重复出现的字符，不区分大小写 解决方式emmm 我是用for循环来写的，1234567891011function isIsogram(str)&amp;#123;  str = str.toLowerCase()  for(let i = 0; i &amp;lt; str.length; i++)&amp;#123;    for(let j = i + 1; j &amp;lt; str.length">
+<meta name="twitter:description" content="题目验证字符串中是否有重复出现的字符，不区分大小写">
 
 
 
@@ -160,7 +160,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">永远充满憧憬与期待</p>
       
   </div>
 
@@ -331,7 +331,7 @@
       
 
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>验证字符串中是否有重复出现的字符，不区分大小写</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>验证字符串中是否有重复出现的字符，不区分大小写<br><a id="more"></a></p>
 <h2 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h2><p>emmm 我是用for循环来写的，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isIsogram(str)&#123;</span><br><span class="line">  str = str.toLowerCase()</span><br><span class="line">  <span class="keyword">for</span>(<span class="built_in">let</span> i = 0; i &lt; str.length; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> j = i + 1; j &lt; str.length; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(str[i] === str[j])&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>本来也有想用正则是否能处理，但完全写不出来<br>最后提交之后看到其中一个处理方式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isIsogram(str)&#123; </span><br><span class="line">  <span class="built_in">return</span> !/(\w).*\1/i.test(str)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>但是依然时间复杂度为O(n^2)<br>之后寻找一下有没有代码较简且时间复杂度较优的解决方案</p>
@@ -472,7 +472,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
