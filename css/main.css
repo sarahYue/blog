@@ -644,6 +644,13 @@ pre .keyword,
 pre .javascript .function {
   color: #8959a8;
 }
+.code pre {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #f7f7f7;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 .full-image.full-image.full-image.full-image {
   border: none;
   max-width: 100%;
@@ -1833,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #140087;
+  background: #fba791;
 }
 .links-of-blogroll {
   font-size: 13px;
