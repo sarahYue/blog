@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="原因项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高">
+<meta name="description" content="目的了解RSS是什么">
 <meta property="og:type" content="article">
-<meta property="og:title" content="el-row同行自动等高 + 递归组件">
-<meta property="og:url" content="http://sarahyue.github.io/2019/05/30/el-row同行自动等高 + 递归组件/index.html">
+<meta property="og:title" content="RSS是什么">
+<meta property="og:url" content="http://sarahyue.github.io/2019/06/10/RSS是什么/index.html">
 <meta property="og:site_name" content="sarahYue">
-<meta property="og:description" content="原因项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高">
+<meta property="og:description" content="目的了解RSS是什么">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-10T06:50:24.107Z">
+<meta property="og:updated_time" content="2019-06-10T05:16:19.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="el-row同行自动等高 + 递归组件">
-<meta name="twitter:description" content="原因项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高">
+<meta name="twitter:title" content="RSS是什么">
+<meta name="twitter:description" content="目的了解RSS是什么">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://sarahyue.github.io/2019/05/30/el-row同行自动等高 + 递归组件/">
+  <link rel="canonical" href="http://sarahyue.github.io/2019/06/10/RSS是什么/">
 
 
 
 
 
-  <title>el-row同行自动等高 + 递归组件 | sarahYue</title>
+  <title>RSS是什么 | sarahYue</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/05/30/el-row同行自动等高 + 递归组件/">
+    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/06/10/RSS是什么/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sarah">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">el-row同行自动等高 + 递归组件</h1>
+          <h1 class="post-title" itemprop="name headline">RSS是什么</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-30T14:31:11+08:00">
-                2019-05-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T13:15:34+08:00">
+                2019-06-10
               </time>
             
 
@@ -294,8 +294,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/未完成/" itemprop="url" rel="index">
+                    <span itemprop="name">未完成</span>
                   </a>
                 </span>
 
@@ -331,10 +331,7 @@
       
 
       
-        <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>项目布局为可配置内容，使用elementui的row-col形式嵌套处理，但每个板块的高度不是配置项，所以需要同行内容自动等高<br><a id="more"></a><br>使用flex布局<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row <span class="built_in">type</span>=<span class="string">'flex'</span>&gt;</span><br><span class="line">  &lt;el-col&gt;&lt;/el-col&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure></p>
-<p>配合递归组件即可实现无限嵌套布局</p>
-<h2 id="递归组件"><a href="#递归组件" class="headerlink" title="递归组件"></a>递归组件</h2><h3 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;innerTree :arr=<span class="string">'arr'</span>&gt;&lt;/innerTree&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import innerTree from <span class="string">'@/components/innerTree'</span></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      arr: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    innerTree</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">created</span></span> () &#123;</span><br><span class="line">    // 需要处理arr数据格式，符合树类型</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;el-row v-for=<span class="string">'row in arr'</span> :key=<span class="string">'row'</span>&gt;</span><br><span class="line">      &lt;el-col v-for=<span class="string">'item in row'</span> :key=<span class="string">'item'</span>&gt;</span><br><span class="line">        &lt;div v-if=<span class="string">'!item.children'</span>&gt;....&lt;/div&gt;</span><br><span class="line">        &lt;div v-else&gt;</span><br><span class="line">          &lt;innerTree :arr=<span class="string">'item.children'</span>&gt;&lt;/innerTree&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/el-col&gt;</span><br><span class="line">    &lt;/el-row&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="built_in">export</span> default &#123;</span><br><span class="line">    name: <span class="string">'innerTree'</span>,</span><br><span class="line">    props: &#123;</span><br><span class="line">      arr: Array</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        <h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>了解RSS是什么</p>
 
       
     </div>
@@ -367,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/30/验证字符串中是否有重复出现的字符/" rel="next" title="验证字符串中是否有重复出现的字符">
-                <i class="fa fa-chevron-left"></i> 验证字符串中是否有重复出现的字符
+              <a href="/2019/06/10/正则详细了解/" rel="next" title="正则详细了解">
+                <i class="fa fa-chevron-left"></i> 正则详细了解
               </a>
             
           </div>
@@ -377,8 +374,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/31/生成指定长度的重复字符串/" rel="prev" title="生成指定长度的重复字符串">
-                生成指定长度的重复字符串 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/10/ES6梳理/" rel="prev" title="ES6梳理">
+                ES6梳理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,7 +506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归组件"><span class="nav-number">2.</span> <span class="nav-text">递归组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父组件"><span class="nav-number">2.1.</span> <span class="nav-text">父组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组件"><span class="nav-number">2.2.</span> <span class="nav-text">子组件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li></ol></div>
             
 
           </div>

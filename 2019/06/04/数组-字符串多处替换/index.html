@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="sarahYue">
 <meta property="og:description" content="需求1[1,2,3,4,5,6,7,8,9,0]  =&amp;gt;   (123) 456-7890">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-05T08:54:17.541Z">
+<meta property="og:updated_time" content="2019-06-10T06:56:04.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组&#x2F;字符串多处替换">
 <meta name="twitter:description" content="需求1[1,2,3,4,5,6,7,8,9,0]  =&amp;gt;   (123) 456-7890">
@@ -331,10 +331,10 @@
       
 
       
-        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1,2,3,4,5,6,7,8,9,0]  =&gt;   (123) 456-7890</span><br></pre></td></tr></table></figure>
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>]  =&gt;   (<span class="number">123</span>) <span class="number">456</span><span class="number">-7890</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>使用join先将数组转为字符串<br>继而用replace替换</p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function createPhoneNumber(numbers)&#123;</span><br><span class="line">  return numbers.join(&apos;&apos;).replace(/(...)(...)(.*)/, &apos;($1) $2-$3&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPhoneNumber</span>(<span class="params">numbers</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> numbers.join(<span class="string">''</span>).replace(<span class="regexp">/(...)(...)(.*)/</span>, <span class="string">'($1) $2-$3'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -463,7 +463,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
