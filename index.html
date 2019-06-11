@@ -344,6 +344,8 @@
 </li>
 <li><p>eventbus</p>
 </li>
+<li><p>v-slot</p>
+</li>
 </ol>
 
           
@@ -635,14 +637,38 @@
 
       
         
-          <p>上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> <span class="title">executor</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span> ; i&lt;<span class="number">10000</span> ; i++ ) &#123;</span><br><span class="line">    i == <span class="number">9999</span> &amp;&amp; resolve();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/10/microtask和macrotask/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <a id="more"></a>
+<p>上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> <span class="title">executor</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span> ; i&lt;<span class="number">10000</span> ; i++ ) &#123;</span><br><span class="line">    i == <span class="number">9999</span> &amp;&amp; resolve();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br></pre></td></tr></table></figure></p>
+<p>引用原作者分析流程</p>
+<blockquote>
+<p>首先先碰到一个 setTimeout，于是会先设置一个定时，在定时结束后将传递这个函数放到任务队列里面，因此开始肯定不会输出 1 。<br>然后是一个 Promise，里面的函数是直接执行的，因此应该直接输出 2 3 。<br>然后，Promise 的 then 应当会放到当前 tick 的最后，但是还是在当前 tick 中。<br>因此，应当先输出 5，然后再输出 4 。<br>最后在到下一个 tick，就是 1 。<br>“2 3 5 4 1”</p>
+</blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/25407758" target="_blank" rel="noopener">原地址</a></p>
+<p>回复中提到</p>
+<blockquote>
+<p>4 在 1 前面输出是因为 Promise.then()里面的回调属于 microtask, 会在当前 Event Loop 的最后执行, 而 SetTimeout 内的回调属于 macrotask, 会在下一个 Event Loop 中执行</p>
+</blockquote>
+<h4 id="Macrotasks和Microtasks"><a href="#Macrotasks和Microtasks" class="headerlink" title="Macrotasks和Microtasks"></a>Macrotasks和Microtasks</h4><blockquote>
+<p>Here “platform code” means engine, environment, and promise implementation code. In practice, this requirement ensures that onFulfilled and onRejected execute asynchronously, after the event loop turn in which then is called, and with a fresh stack. This can be implemented with either a “macro-task” mechanism such as setTimeout or setImmediate, or with a “micro-task” mechanism such as MutationObserver or process.nextTick.Since the promise implementation is considered platform code, it may itself contain a task-scheduling queue or “trampoline” in which the handlers are called.</p>
+</blockquote>
+<p>Macrotasks和Microtasks 都属于上述的异步任务中的一种，他们分别有如下API：</p>
+<h4 id="macrotasks"><a href="#macrotasks" class="headerlink" title="macrotasks:"></a><strong>macrotasks</strong>:</h4><ul>
+<li>setTimeout</li>
+<li>setInterval</li>
+<li>setImmediate</li>
+<li>I/O</li>
+<li>UI rendering</li>
+</ul>
+<h4 id="microtasks"><a href="#microtasks" class="headerlink" title="microtasks:"></a><strong>microtasks</strong>:</h4><ul>
+<li>process.nextTick</li>
+<li>Promise</li>
+<li>MutationObserver</li>
+</ul>
+<p><code>任务队列分为 macrotasks 和 microtasks, 而promise中的then方法的函数会被推入到microtasks队列中，而setTimeout函数会被推入到macrotasks</code><br><code>任务队列中，在每一次事件循环中，macrotask只会提取一个执行，而microtask会一直提取，直到microsoft队列为空为止。</code></p>
+<p>如果某个microtask任务被推入到执行中，那么当主线程任务执行完成后，会循环调用该队列任务中的下一个任务来执行，直到该任务队列到最后一个任务为止。而事件循环每次只会入栈一个macrotask,主线程执行完成该任务后又会检查microtasks队列并完成里面的所有任务后再执行macrotask的任务。</p>
+
+          
         
       
     </div>
