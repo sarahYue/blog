@@ -242,6 +242,261 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/06/13/Object-key、Object-values、Object-entries/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sarah">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://psm8cneww.bkt.clouddn.com/u=1980380075,26566538&fm=26&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sarahYue">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/13/Object-key、Object-values、Object-entries/" itemprop="url">Object.key、Object.values、Object.entries</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-13T14:18:01+08:00">
+                2019-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="例子引发"><a href="#例子引发" class="headerlink" title="例子引发"></a>例子引发</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> recipe = &#123;<span class="attr">apples</span>: <span class="number">3</span>, <span class="attr">flour</span>: <span class="number">300</span>, <span class="attr">sugar</span>: <span class="number">150</span>, <span class="attr">milk</span>: <span class="number">100</span>, <span class="attr">oil</span>: <span class="number">100</span>&#125;</span><br><span class="line"><span class="built_in">Math</span>.min(...Object.values(recipe)) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<h3 id="Object-values"><a href="#Object-values" class="headerlink" title="Object.values"></a>Object.values</h3><blockquote>
+<p>Object.values()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.values(recipe) <span class="comment">// ["apples", "flour", "sugar", "milk", "oil"]</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="string">'foo'</span>) <span class="comment">// ['f', 'o', 'o']</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="number">42</span>) <span class="comment">// []</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="literal">true</span>) <span class="comment">// []</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="Object-values-1"><a href="#Object-values-1" class="headerlink" title="Object.values"></a>Object.values</h3><blockquote>
+<p>Object.values()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。<br><code>Object.values(recipe) // [3, 300, 150, 100, 100</code></p>
+</blockquote>
+<h3 id="Object-entries"><a href="#Object-entries" class="headerlink" title="Object.entries"></a>Object.entries</h3><blockquote>
+<p>Object.entries方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。<br><code>Object.entries(recipe) // 自行控制台打印</code></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/06/13/获取数组最大值和最小值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sarah">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://psm8cneww.bkt.clouddn.com/u=1980380075,26566538&fm=26&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sarahYue">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/13/获取数组最大值和最小值/" itemprop="url">获取数组最大值和最小值</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-13T13:48:57+08:00">
+                2019-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用Math.max、Math.min、apply获取数组最大值和最小值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newArr = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">Math</span>.min.apply(<span class="literal">null</span>,newArr) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>同理</p>
+<p>至于原理，等我彻彻底底弄明白了再解释<br>大致是<br><code>Math.min.apply(null,newArr)</code> 等同于 <code>apply(Math.min,newArr)</code>，<br>而apply会使用第一个参数作为方法，将第二个参数遍历操作后返回</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/06/11/vue小随笔/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1406,302 +1661,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/06/04/map-splice无法全部删除/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sarah">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="http://psm8cneww.bkt.clouddn.com/u=1980380075,26566538&fm=26&gp=0.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sarahYue">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/04/map-splice无法全部删除/" itemprop="url">map+splice无法全部删除</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T15:20:41+08:00">
-                2019-06-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>使用map+splice筛选删除数组内元素时会出现跳过现象<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/04/map-splice无法全部删除/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/06/04/字符串搜索-过滤/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sarah">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="http://psm8cneww.bkt.clouddn.com/u=1980380075,26566538&fm=26&gp=0.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sarahYue">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/04/字符串搜索-过滤/" itemprop="url">字符串搜索/过滤</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T13:55:59+08:00">
-                2019-06-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="match-方法"><a href="#match-方法" class="headerlink" title="match()方法"></a>match()方法</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/04/字符串搜索-过滤/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1754,7 +1713,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
