@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="需求1[1,2,3,4,5,6,7,8,9,0]  =&amp;gt;   (123) 456-7890">
+<meta name="description" content="最近是加班模式虽然忙的内容让我感觉完全是体力劳动也还ok啦 有点想考研之前是一直觉得这个行业不太有必要考研现在觉得这一步早晚都是要走都 希望接下来能融入工作生活可以越来越好">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数组&#x2F;字符串多处替换">
-<meta property="og:url" content="http://sarahyue.github.io/2019/06/04/数组-字符串多处替换/index.html">
+<meta property="og:title" content="最近">
+<meta property="og:url" content="http://sarahyue.github.io/2019/07/02/最近/index.html">
 <meta property="og:site_name" content="sarahYue">
-<meta property="og:description" content="需求1[1,2,3,4,5,6,7,8,9,0]  =&amp;gt;   (123) 456-7890">
+<meta property="og:description" content="最近是加班模式虽然忙的内容让我感觉完全是体力劳动也还ok啦 有点想考研之前是一直觉得这个行业不太有必要考研现在觉得这一步早晚都是要走都 希望接下来能融入工作生活可以越来越好">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-10T06:56:04.755Z">
+<meta property="og:updated_time" content="2019-07-02T01:12:31.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数组&#x2F;字符串多处替换">
-<meta name="twitter:description" content="需求1[1,2,3,4,5,6,7,8,9,0]  =&amp;gt;   (123) 456-7890">
+<meta name="twitter:title" content="最近">
+<meta name="twitter:description" content="最近是加班模式虽然忙的内容让我感觉完全是体力劳动也还ok啦 有点想考研之前是一直觉得这个行业不太有必要考研现在觉得这一步早晚都是要走都 希望接下来能融入工作生活可以越来越好">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://sarahyue.github.io/2019/06/04/数组-字符串多处替换/">
+  <link rel="canonical" href="http://sarahyue.github.io/2019/07/02/最近/">
 
 
 
 
 
-  <title>数组/字符串多处替换 | sarahYue</title>
+  <title>最近 | sarahYue</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/06/04/数组-字符串多处替换/">
+    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/07/02/最近/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sarah">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数组/字符串多处替换</h1>
+          <h1 class="post-title" itemprop="name headline">最近</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T10:22:03+08:00">
-                2019-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-02T09:05:18+08:00">
+                2019-07-02
               </time>
             
 
@@ -281,28 +281,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -331,10 +309,9 @@
       
 
       
-        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>]  =&gt;   (<span class="number">123</span>) <span class="number">456</span><span class="number">-7890</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>使用join先将数组转为字符串<br>继而用replace替换</p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPhoneNumber</span>(<span class="params">numbers</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> numbers.join(<span class="string">''</span>).replace(<span class="regexp">/(...)(...)(.*)/</span>, <span class="string">'($1) $2-$3'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>最近是加班模式<br>虽然忙的内容让我感觉完全是体力劳动<br>也还ok啦</p>
+<p>有点想考研<br>之前是一直觉得这个行业不太有必要考研<br>现在觉得这一步早晚都是要走都</p>
+<p>希望接下来能融入工作<br>生活可以越来越好</p>
 
       
     </div>
@@ -367,8 +344,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/03/el-table宽度自适应/" rel="next" title="el-table宽度自适应">
-                <i class="fa fa-chevron-left"></i> el-table宽度自适应
+              <a href="/2019/06/13/Object-key、Object-values、Object-entries/" rel="next" title="Object.key、Object.values、Object.entries">
+                <i class="fa fa-chevron-left"></i> Object.key、Object.values、Object.entries
               </a>
             
           </div>
@@ -376,10 +353,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/04/字符串搜索-过滤/" rel="prev" title="字符串搜索/过滤">
-                字符串搜索/过滤 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -436,17 +409,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -499,22 +463,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-text">实现</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

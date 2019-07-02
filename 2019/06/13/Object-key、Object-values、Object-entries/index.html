@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="例子引发12var recipe = &amp;#123;apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100&amp;#125;Math.min(...Object.values(recipe)) // 3 Object.values Object.values()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的">
+<meta name="description" content="例子引发12var recipe = &amp;#123;apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100&amp;#125;Math.min(...Object.values(recipe)) // 3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Object.key、Object.values、Object.entries">
 <meta property="og:url" content="http://sarahyue.github.io/2019/06/13/Object-key、Object-values、Object-entries/index.html">
 <meta property="og:site_name" content="sarahYue">
-<meta property="og:description" content="例子引发12var recipe = &amp;#123;apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100&amp;#125;Math.min(...Object.values(recipe)) // 3 Object.values Object.values()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的">
+<meta property="og:description" content="例子引发12var recipe = &amp;#123;apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100&amp;#125;Math.min(...Object.values(recipe)) // 3">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-13T07:19:38.222Z">
+<meta property="og:updated_time" content="2019-06-14T07:29:28.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Object.key、Object.values、Object.entries">
-<meta name="twitter:description" content="例子引发12var recipe = &amp;#123;apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100&amp;#125;Math.min(...Object.values(recipe)) // 3 Object.values Object.values()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的">
+<meta name="twitter:description" content="例子引发12var recipe = &amp;#123;apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100&amp;#125;Math.min(...Object.values(recipe)) // 3">
 
 
 
@@ -310,15 +310,22 @@
 
       
         <h4 id="例子引发"><a href="#例子引发" class="headerlink" title="例子引发"></a>例子引发</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> recipe = &#123;<span class="attr">apples</span>: <span class="number">3</span>, <span class="attr">flour</span>: <span class="number">300</span>, <span class="attr">sugar</span>: <span class="number">150</span>, <span class="attr">milk</span>: <span class="number">100</span>, <span class="attr">oil</span>: <span class="number">100</span>&#125;</span><br><span class="line"><span class="built_in">Math</span>.min(...Object.values(recipe)) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
 <h3 id="Object-values"><a href="#Object-values" class="headerlink" title="Object.values"></a>Object.values</h3><blockquote>
-<p>Object.values()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.values(recipe) <span class="comment">// ["apples", "flour", "sugar", "milk", "oil"]</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="string">'foo'</span>) <span class="comment">// ['f', 'o', 'o']</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="number">42</span>) <span class="comment">// []</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="literal">true</span>) <span class="comment">// []</span></span><br></pre></td></tr></table></figure></p>
+<p>Object.values()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。</p>
 </blockquote>
-<h3 id="Object-values-1"><a href="#Object-values-1" class="headerlink" title="Object.values"></a>Object.values</h3><blockquote>
-<p>Object.values()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。<br><code>Object.values(recipe) // [3, 300, 150, 100, 100</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.values(recipe) <span class="comment">// [3, 300, 150, 100, 100]</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="string">'foo'</span>) <span class="comment">// ['f', 'o', 'o']</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="number">42</span>) <span class="comment">// []</span></span><br><span class="line"><span class="built_in">Object</span>.values(<span class="literal">true</span>) <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys"></a>Object.keys</h3><blockquote>
+<p>Object.values()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。</p>
 </blockquote>
+<p><code>Object.keys(recipe) // [&quot;apples&quot;, &quot;flour&quot;, &quot;sugar&quot;, &quot;milk&quot;, &quot;oil&quot;]</code></p>
+<hr>
 <h3 id="Object-entries"><a href="#Object-entries" class="headerlink" title="Object.entries"></a>Object.entries</h3><blockquote>
-<p>Object.entries方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。<br><code>Object.entries(recipe) // 自行控制台打印</code></p>
+<p>Object.entries方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。</p>
 </blockquote>
+<p><code>Object.entries(recipe) // 自行控制台打印</code></p>
 
       
     </div>
@@ -360,6 +367,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/02/最近/" rel="prev" title="最近">
+                最近 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -443,7 +454,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -489,7 +500,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#例子引发"><span class="nav-text">例子引发</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-values"><span class="nav-text">Object.values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-values-1"><span class="nav-text">Object.values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-entries"><span class="nav-text">Object.entries</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#例子引发"><span class="nav-text">例子引发</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-values"><span class="nav-text">Object.values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-keys"><span class="nav-text">Object.keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-entries"><span class="nav-text">Object.entries</span></a></li></div>
             
 
           </div>
