@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="遇到一个延时和promise时间顺序的面试题，涉及到microtask和macrotask概念">
+<meta name="description" content="1. commonjs的局限12var math = require(&apos;math&apos;);math.add(2, 3); 以上代码片段中，第二行math.add(2, 3)，在第一行require(‘math’)之后运行，因此必须等math.js加载完成。也就是说，如果加载时间很长，整个应用就会停在那里等。 在浏览器端，require是同步加载的如果模块加载需要很长时间，会导致“假死” 因此，浏览器端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="microtask和macrotask">
-<meta property="og:url" content="http://sarahyue.github.io/2019/06/10/microtask和macrotask/index.html">
+<meta property="og:title" content="模块载入-AMD和requirejs">
+<meta property="og:url" content="http://sarahyue.github.io/2020/10/13/模块载入-AMD和requirejs/index.html">
 <meta property="og:site_name" content="sarahYue">
-<meta property="og:description" content="遇到一个延时和promise时间顺序的面试题，涉及到microtask和macrotask概念">
+<meta property="og:description" content="1. commonjs的局限12var math = require(&apos;math&apos;);math.add(2, 3); 以上代码片段中，第二行math.add(2, 3)，在第一行require(‘math’)之后运行，因此必须等math.js加载完成。也就是说，如果加载时间很长，整个应用就会停在那里等。 在浏览器端，require是同步加载的如果模块加载需要很长时间，会导致“假死” 因此，浏览器端">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-12T06:17:23.568Z">
+<meta property="og:updated_time" content="2020-10-13T05:05:01.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="microtask和macrotask">
-<meta name="twitter:description" content="遇到一个延时和promise时间顺序的面试题，涉及到microtask和macrotask概念">
+<meta name="twitter:title" content="模块载入-AMD和requirejs">
+<meta name="twitter:description" content="1. commonjs的局限12var math = require(&apos;math&apos;);math.add(2, 3); 以上代码片段中，第二行math.add(2, 3)，在第一行require(‘math’)之后运行，因此必须等math.js加载完成。也就是说，如果加载时间很长，整个应用就会停在那里等。 在浏览器端，require是同步加载的如果模块加载需要很长时间，会导致“假死” 因此，浏览器端">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://sarahyue.github.io/2019/06/10/microtask和macrotask/">
+  <link rel="canonical" href="http://sarahyue.github.io/2020/10/13/模块载入-AMD和requirejs/">
 
 
 
 
 
-  <title>microtask和macrotask | sarahYue</title>
+  <title>模块载入-AMD和requirejs | sarahYue</title>
   
 
 
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2019/06/10/microtask和macrotask/">
+    <link itemprop="mainEntityOfPage" href="http://sarahyue.github.io/2020/10/13/模块载入-AMD和requirejs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sarah">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">microtask和macrotask</h1>
+          <h1 class="post-title" itemprop="name headline">模块载入-AMD和requirejs</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T15:52:35+08:00">
-                2019-06-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-13T09:34:39+08:00">
+                2020-10-13
               </time>
             
 
@@ -281,28 +281,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -331,35 +309,25 @@
       
 
       
-        <p>遇到一个延时和promise时间顺序的面试题，涉及到microtask和macrotask概念<br><a id="more"></a></p>
-<h3 id="1-例子"><a href="#1-例子" class="headerlink" title="1. 例子"></a>1. 例子</h3><p>上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> <span class="title">executor</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span> ; i&lt;<span class="number">10000</span> ; i++ ) &#123;</span><br><span class="line">    i == <span class="number">9999</span> &amp;&amp; resolve();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br></pre></td></tr></table></figure></p>
-<p>引用原作者分析流程</p>
-<blockquote>
-<p>首先先碰到一个 setTimeout，于是会先设置一个定时，在定时结束后将传递这个函数放到任务队列里面，因此开始肯定不会输出 1 。<br>然后是一个 Promise，里面的函数是直接执行的，因此应该直接输出 2 3 。<br>然后，Promise 的 then 应当会放到当前 tick 的最后，但是还是在当前 tick 中。<br>因此，应当先输出 5，然后再输出 4 。<br>最后在到下一个 tick，就是 1 。<br>“2 3 5 4 1”</p>
-</blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/25407758" target="_blank" rel="noopener">原地址</a></p>
-<p>回复中提到</p>
-<blockquote>
-<p>4 在 1 前面输出是因为 Promise.then()里面的回调属于 microtask, 会在当前 Event Loop 的最后执行, 而 SetTimeout 内的回调属于 macrotask, 会在下一个 Event Loop 中执行</p>
-</blockquote>
-<h3 id="2-Macrotasks和Microtasks"><a href="#2-Macrotasks和Microtasks" class="headerlink" title="2. Macrotasks和Microtasks"></a>2. Macrotasks和Microtasks</h3><blockquote>
-<p>Here “platform code” means engine, environment, and promise implementation code. In practice, this requirement ensures that onFulfilled and onRejected execute asynchronously, after the event loop turn in which then is called, and with a fresh stack. This can be implemented with either a “macro-task” mechanism such as setTimeout or setImmediate, or with a “micro-task” mechanism such as MutationObserver or process.nextTick.Since the promise implementation is considered platform code, it may itself contain a task-scheduling queue or “trampoline” in which the handlers are called.</p>
-</blockquote>
-<p>Macrotasks和Microtasks 都属于上述的异步任务中的一种，他们分别有如下API：</p>
-<h4 id="2-1-macrotasks"><a href="#2-1-macrotasks" class="headerlink" title="2.1 macrotasks:"></a>2.1 <strong>macrotasks</strong>:</h4><ul>
-<li>setTimeout</li>
-<li>setInterval</li>
-<li>setImmediate</li>
-<li>I/O</li>
-<li>UI rendering</li>
-</ul>
-<h4 id="2-2-microtasks"><a href="#2-2-microtasks" class="headerlink" title="2.2 microtasks:"></a>2.2 <strong>microtasks</strong>:</h4><ul>
-<li>process.nextTick</li>
-<li>Promise</li>
-<li>MutationObserver</li>
-</ul>
-<h4 id="2-3-不同"><a href="#2-3-不同" class="headerlink" title="2.3 不同"></a>2.3 不同</h4><p><code>任务队列分为 macrotasks 和 microtasks, 而promise中的then方法的函数会被推入到microtasks队列中，而setTimeout函数会被推入到macrotasks</code><br><code>任务队列中，在每一次事件循环中，macrotask只会提取一个执行，而microtask会一直提取，直到microsoft队列为空为止。</code></p>
-<p>如果某个microtask任务被推入到执行中，那么当主线程任务执行完成后，会循环调用该队列任务中的下一个任务来执行，直到该任务队列到最后一个任务为止。而事件循环每次只会入栈一个macrotask,主线程执行完成该任务后又会检查microtasks队列并完成里面的所有任务后再执行macrotask的任务。</p>
+        <h3 id="1-commonjs的局限"><a href="#1-commonjs的局限" class="headerlink" title="1. commonjs的局限"></a>1. commonjs的局限</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> math = <span class="built_in">require</span>(<span class="string">'math'</span>);</span><br><span class="line">math.add(<span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>以上代码片段中，第二行math.add(2, 3)，在第一行require(‘math’)之后运行，因此必须等math.js加载完成。也就是说，如果加载时间很长，整个应用就会停在那里等。</p>
+<p>在浏览器端，<em>require是同步加载的</em><br>如果模块加载需要很长时间，会导致“假死”</p>
+<p>因此，浏览器端的模块，不能采用”同步加载”（synchronous），只能采用”异步加载”（asynchronous）。这就是AMD规范诞生的背景。</p>
+<h3 id="2-AMD"><a href="#2-AMD" class="headerlink" title="2. AMD"></a>2. AMD</h3><p>AMD是”Asynchronous Module Definition”的缩写，意思就是”异步模块定义”。它采用异步方式加载模块，模块的加载不影响它后面语句的运行。所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。</p>
+<p>AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两个参数：require([module], callback);</p>
+<p>　　第一个参数[module]，是一个数组，里面的成员就是要加载的模块；第二个参数callback，则是加载成功之后的回调函数。如果将前面的代码改写成AMD形式，就是下面这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="string">'math'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">math</span>) </span>&#123;</span><br><span class="line">    math.add(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>math.add()与math模块加载不是同步的，浏览器不会发生假死。所以很显然，AMD比较适合浏览器环境。RequireJS就是实现了AMD规范。</p>
+<h3 id="3-requirejs"><a href="#3-requirejs" class="headerlink" title="3 requirejs"></a>3 requirejs</h3><h2 id="3-1-诞生背景"><a href="#3-1-诞生背景" class="headerlink" title="3.1 诞生背景"></a>3.1 诞生背景</h2><p>require.js的诞生，是为了解决这两个问题：</p>
+<p>（1）实现js文件的异步加载，避免网页失去响应；</p>
+<p>（2）管理模块之间的依赖性，便于代码的编写和维护。</p>
+<h2 id="3-2-requirejs的加载"><a href="#3-2-requirejs的加载" class="headerlink" title="3.2 requirejs的加载"></a>3.2 requirejs的加载</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/require.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>有人可能会想到，加载这个文件，也可能造成网页失去响应。解决办法有两个，一个是把它放在网页底部加载，另一个是写成下面这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/require.js"</span> defer <span class="keyword">async</span>=<span class="string">"true"</span> &gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>async属性表明这个文件需要异步加载，避免网页失去响应。IE不支持这个属性，只支持defer，所以把defer也写上。</p>
+<p>加载require.js以后，下一步就要加载我们自己的代码了。假定我们自己的代码文件是main.js，也放在js目录下面。那么，只需要写成下面这样就行了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/require.js"</span> data-main=<span class="string">"js/main"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>data-main属性的作用是，指定网页程序的主模块。在上例中，就是js目录下面的main.js，这个文件会第一个被require.js加载。由于require.js默认的文件后缀名是js，所以可以把main.js简写成main。</p>
+<h2 id="3-3-主模块的写法-示例中的mainjs"><a href="#3-3-主模块的写法-示例中的mainjs" class="headerlink" title="3.3 主模块的写法(示例中的mainjs)"></a>3.3 主模块的写法(示例中的mainjs)</h2><p>上一节的main.js，我把它称为”主模块”，意思是整个网页的入口代码。它有点像C语言的main()函数，所有代码都从这儿开始运行。</p>
+<p>下面就来看，怎么写main.js。如果我们的代码不依赖任何其他模块，那么可以直接写入javascript代码。</p>
 
       
     </div>
@@ -392,8 +360,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/10/ES6梳理/" rel="next" title="ES6梳理">
-                <i class="fa fa-chevron-left"></i> ES6梳理
+              <a href="/2020/10/10/其他琐碎知识点/" rel="next" title="其他琐碎知识点">
+                <i class="fa fa-chevron-left"></i> 其他琐碎知识点
               </a>
             
           </div>
@@ -402,8 +370,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/11/发布订阅模式/" rel="prev" title="发布订阅模式">
-                发布订阅模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/11/05/promise链式调用/" rel="prev" title="promise链式调用">
+                promise链式调用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -534,7 +502,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-例子"><span class="nav-text">1. 例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Macrotasks和Microtasks"><span class="nav-text">2. Macrotasks和Microtasks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-macrotasks"><span class="nav-text">2.1 macrotasks:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-microtasks"><span class="nav-text">2.2 microtasks:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-不同"><span class="nav-text">2.3 不同</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-commonjs的局限"><span class="nav-text">1. commonjs的局限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-AMD"><span class="nav-text">2. AMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-requirejs"><span class="nav-text">3 requirejs</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-诞生背景"><span class="nav-text">3.1 诞生背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-requirejs的加载"><span class="nav-text">3.2 requirejs的加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-主模块的写法-示例中的mainjs"><span class="nav-text">3.3 主模块的写法(示例中的mainjs)</span></a></li></div>
             
 
           </div>
